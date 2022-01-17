@@ -6,8 +6,15 @@
 //#include <boost/timer/timer.hpp>
 //#include <cmath>
 
+THIRD_PARTY_INCLUDES_START
+#pragma push_macro("check")
+#undef check
+
 #include <boost/graph/adjacency_list.hpp>
 #include <boost/tuple/tuple.hpp>
+
+#pragma pop_macro("check")
+THIRD_PARTY_INCLUDES_END
 
 void UBoostTestFunctionLibrary::testTimer()
 {

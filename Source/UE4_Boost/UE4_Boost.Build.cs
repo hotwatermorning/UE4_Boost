@@ -10,8 +10,12 @@ public class UE4_Boost : ModuleRules
         get { return Path.GetFullPath( Path.Combine( ModuleDirectory, "../../ThirdParty/" ) ); }
     }
 	
-	public UE4_Boost(TargetInfo Target)
+	public UE4_Boost(ReadOnlyTargetRules Target) : base(Target)
 	{
+		//Type = ModuleType.External;
+		bEnableUndefinedIdentifierWarnings = false;
+		bUseRTTI = true;
+		
         PublicIncludePaths.Add(Path.Combine(ThirdPartyPath, "BoostInternalLibrary", "includes"));
 
         //PublicIncludePaths.Add("$(BOOST_HOME)");
